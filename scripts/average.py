@@ -7,7 +7,7 @@
 import csv
 from datetime import datetime
 
-# Define the date and file.
+# Define the file and date.
 input_file = 'test.csv'
 input_date = '20190101'
 
@@ -15,7 +15,7 @@ input_date = '20190101'
 count = 0
 sum = 0
 
-# Loop trough columns 0 (unixtime) and 1 (value) and convert unixtime to human date and time.
+# Loop trough columns 0 (unixtime) and 1 (value) and convert unixtime to human date.
 for row in csv.reader(open(input_file)):
   date_ = datetime.utcfromtimestamp(float(row[0])).strftime('%Y%m%d')
   value = float(row[1])
