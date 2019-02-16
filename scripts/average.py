@@ -1,22 +1,35 @@
 #!/usr/bin/env python3
-# Script to read a csv file with values and calculate the average value.
+###############################################################################
+# This script does:
+# 1. Read a csv file and convert the unixtime to human date (yyyymmdd).
+# 2. Calculate the average value for the given input_date and print it.
+###############################################################################
 import csv
+from datetime import datetime
 
-# Define the csv file.
-csv_file = 'test_20190101.csv'
+# Define the date and file.
+input_file = 'test.csv'
+input_date = '20190101'
 
 # Set count and sum to zero.
 count = 0
 sum = 0
 
-# Loop trough all rows to read values from column 2.
-for row in csv.reader(open(csv_file)):
-  value = float(row[2])
+# Loop trough columns 0 (unixtime) and 1 (value) and convert unixtime to human date and time.
+for row in csv.reader(open(input_file)):
+  date_ = datetime.utcfromtimestamp(float(row[0])).strftime('%Y%m%d')
+  value = float(row[1])
 
-  # Calculate the average of all values and round to 2 decimals.
-  count = count + 1
-  sum = sum + value
-  average = round(sum / count, 2)
+  # Check if the date matches with the input_date.
+  if date_ == input_date:
+      # Calculate the average of the values and round to 2 decimals.
+      count = count + 1
+      sum = sum + value
+      average = round(sum / count, 2)
 
-# Print the result.
-print('Average:', average)
+# Print the results.
+print('-'*40)
+print('File    :', input_file)
+print('Date    :', input_date)
+print('Average :', average)
+print('-'*40)
