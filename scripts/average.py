@@ -11,12 +11,12 @@ sum = 0
 
 # Loop trough all rows to read values from column 2.
 for row in csv.reader(open(csv_file)):
-    value = float(row[2])
+  value = float(row[2])
 
-    # Calculate the average of all values and round to 2 decimals.
-    count = count + 1
-    sum = sum + value
-    average = round(sum / count, 2)
+  # Calculate the average of all values and round to 2 decimals.
+  count = count + 1
+  sum = sum + value
+  average = round(sum / count, 2)
 
 # Print the result.
 print('Average:', average)
