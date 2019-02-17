@@ -53,8 +53,6 @@ for file in input_file:
     total_count = total_count + 1
     total_sum = total_sum + file_avg
     total_avg = round(total_sum / total_count, 2)
-  else:
-    total_avg = 0
 
 # Print the total average value.
 print('-'*40)
