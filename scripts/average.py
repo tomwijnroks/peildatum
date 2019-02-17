@@ -11,10 +11,6 @@
 import csv
 from datetime import datetime
 
-# Define the date and file.
-input_file = 'test.csv'
-input_date = '20190101'
-
 # Set count and sum to zero.
 count = 0
 sum = 0
@@ -32,6 +28,10 @@ for row in csv.reader(open(input_file)):
       average = round(sum / count, 2)
 
 # Print the results.
+# Define the date and files.
+input_date = '2019-01-01'
+input_file = ['bitstampEUR.csv', 'coinbaseEUR.csv', 'krakenEUR.csv']
+
 print('-'*40)
 print('File    :', input_file)
 print('Date    :', input_date)
