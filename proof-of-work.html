@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bitcoin peildatum">
+  <meta name="keywords" content="bitcoin,btc,eur,peildatum,waarde,januari">
+  <title>Waardebepaling</title>
+
+<style type="text/css">
+
+body {
+  font-family: arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 40px auto;
+  max-width: 640px;
+  padding: 0 10px;
+  text-align: justify;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 640px;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+</style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Waardebepaling</h1>
+  </header>
+
+    <p>De waarde is bepaald op basis van exchanges die in BTC/EUR handelen. De waarde is het gemiddelde van alle prijzen die zijn gemeten op 1 januari van het jaar.</p>
+
+    <p>Exchange prijzen zijn afkomstig uit <a href="https://api.bitcoincharts.com/v1/csv/">CSV</a> bestanden van <a href="https://bitcoincharts.com">bitcoincharts.com</a>. Om op basis van deze bestanden het (totale) gemiddelde te berekenen is een <a href="https://github.com/tomwijnroks/peildatum/blob/master/scripts/average.py">script</a> gebruikt.
+
+    <p>Overzicht van de gebruikte exchange data:</p>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Jaar</th>
+        <th>Data</th>
+      </tr>
+      </thead>
+      <tr>
+        <td>2018-2019</td>
+        <td>Bitstamp, Coinbase, Kraken</td>
+      </tr>
+      <tr>
+        <td>2016-2017</td>
+        <td>BTC-e, Coinbase, Kraken</td>
+      </tr>
+      <tr>
+        <td>2015</td>
+        <td>BTC-e, Kraken</td>
+      </tr>
+      <tr>
+        <td>2013-2014</td>
+        <td>BTC-e, Mt.Gox</td>
+      </tr>
+      <tr>
+        <td>2012</td>
+        <td>Mt.Gox</td>
+      </tr>
+      <tr>
+        <td>2010-2011</td>
+        <td>Coindesk (geen exchange)</td>
+      </tr>
+    </table>
+    <p>Voor de jaren 2010-2011 is geen exchange data beschikbaar. Dit zijn de USD waarden van <a href="https://www.in2013dollars.com/bitcoin-price">Coindesk<a/> die zijn omgerekend op basis van de USD/EUR wisselkoers op 1 januari <a href="https://www.xe.com/currencytables/?from=USD&date=2010-01-01">2010<a/> en <a href="https://www.xe.com/currencytables/?from=USD&date=2011-01-01">2011<a/>.</p>
+
+</body>
+</html>
