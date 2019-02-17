@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 ###############################################################################
 # This script does:
-# 1. Read a csv file and convert the unixtime to human date (yyyymmdd).
-# 2. Calculate the average value for the given input_date and print it.
+# 1. Read a csv file and convert the unixtime to human date (yyyy-mm-dd).
+# 2. Calculate the average value for the input_date for every csv file.
+# 3. Calculate the total average value by using the csv file average value.
+#
+# Notes:
+# The used csv files are from: https://api.bitcoincharts.com/v1/csv/
 ###############################################################################
 import csv
 from datetime import datetime
