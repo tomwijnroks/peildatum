@@ -1,2 +1,2 @@
 # peildatum
-Scripts to calculate exchange rate prices for a reference date.
+Files for the Bitcoin [peildatum](https://peildatum.nl) site.
