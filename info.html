@@ -5,24 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Bitcoin peildatum">
   <meta name="keywords" content="bitcoin,btc,eur,peildatum,waarde,januari">
-
   <title>Info</title>
-
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Navbar -->
   <nav class="navbar navbar-light" style="background-color: #FF9900;">
     <a class="navbar-brand" style="color: #FFFFFF;" href="/">Home</a>
       <ul class="navbar-nav mr-auto">
         <a class="navbar-brand" style="color: #FFFFFF;" href="info.html">Info</a>
+      </ul>
   </nav>
-
 </head>
 
 <body>
-
-<div class="container h-100 col-md-6 pt-3">
+<div class="container h-100 col-md-5 pt-3">
   <div class="row h-100 align-items-center m-1">
 
   <header>
@@ -30,44 +26,162 @@
     <br></br>
   </header>
 
-    <p class="text-justify">De waarde van een Bitcoin is bepaald op basis van data van diverse exchanges die in <b>BTC/EUR</b> handelen. De uiteindelijke waarde is het gemiddelde van de waarden die zijn gemeten op exchanges op 1 januari van het jaar.</p>
-
-    <p class="text-justify">Alle exchange data is afkomstig uit CSV bestanden die via <a href="https://api.bitcoincharts.com/v1/csv/">bitcoincharts</a> zijn te downloaden. Er is een <a href="https://github.com/tomwijnroks/peildatum/blob/master/average.py">script</a> gebruikt om deze bestanden uit te lezen en het (totale) gemiddelde te berekenen. De resultaten van het script zijn <a href="https://github.com/tomwijnroks/peildatum/tree/master/results">hier</a> in te zien. </p>
-
-    <p class="text-left">Overzicht van de gebruikte exchange data:</p>
+    <p class="text-justify">De peildatum waarde is bepaald op basis van gegevens van exchanges die in <b>BTC/EUR</b> handelen. De waarde is het gemiddelde van de waarden die zijn gemeten op 1 januari van het jaar.</p>
+    <p class="text-justify">Exchange gegevens zijn afkomstig uit CSV bestanden van <a href="https://api.bitcoincharts.com/v1/csv/">bitcoincharts</a>. Om met deze gegevens de gemiddelde waarden te bepalen is een <a href="https://github.com/tomwijnroks/peildatum/blob/master/average.py">script</a> gebruikt.</p>
+    <p class="text-left">De gegevens hieronder tonen de gemiddelde waarden op 1 januari per exchange.</p>
 
     <div class="table-responsive">
+    <h3>2019</h3>
     <table class="table table-bordered">
-      <thead>
+      <thead class="thead-light">
       <tr>
-        <th>Jaar</th>
-        <th>Exchanges</th>
+        <th>Exchange</th>
+        <th>Waarde</th>
       </tr>
       </thead>
       <tr>
-        <td>2018-2019</td>
-        <td>Bitstamp, Coinbase, Kraken</td>
+        <td>Bitstamp</td>
+        <td>&euro; 3255.12</td>
       </tr>
       <tr>
-        <td>2016-2017</td>
-        <td>BTC-e, Coinbase, Kraken</td>
+        <td>Coinbase</td>
+        <td>&euro; 3256.52</td>
       </tr>
       <tr>
-        <td>2015</td>
-        <td>BTC-e, Kraken</td>
+        <td>Kraken</td>
+        <td>&euro; 3257.04</td>
+      </tr>
+    </table>
+    <h3>2018</h3>
+    <table class="table table-bordered">
+      <thead class="thead-light">
+      <tr>
+        <th>Exchange</th>
+        <th>Waarde</th>
+      </tr>
+      </thead>
+      <tr>
+        <td>Bitstamp</td>
+        <td>&euro; 11156.55</td>
       </tr>
       <tr>
-        <td>2013-2014</td>
-        <td>BTC-e, Mt.Gox</td>
+        <td>Coinbase</td>
+        <td>&euro; 11749.29</td>
       </tr>
       <tr>
-        <td>2012</td>
+        <td>Kraken</td>
+        <td>&euro; 11503.50</td>
+      </tr>
+    </table>
+    <h3>2017</h3>
+    <table class="table table-bordered">
+      <thead class="thead-light">
+      <tr>
+        <th>Exchange</th>
+        <th>Waarde</th>
+      </tr>
+      </thead>
+      <tr>
+        <td>BTC-e</td>
+        <td>&euro; 910.31</td>
+      </tr>
+      <tr>
+        <td>Coinbase</td>
+        <td>&euro; 939.66</td>
+      </tr>
+      <tr>
+        <td>Kraken</td>
+        <td>&euro; 936.07</td>
+      </tr>
+    </table>
+    <h3>2016</h3>
+    <table class="table table-bordered">
+      <thead class="thead-light">
+      <tr>
+        <th>Exchange</th>
+        <th>Waarde</th>
+      </tr>
+      </thead>
+      <tr>
+        <td>BTC-e</td>
+        <td>&euro; 397.30</td>
+      </tr>
+      <tr>
+        <td>Coinbase</td>
+        <td>&euro; 399.07</td>
+      </tr>
+      <tr>
+        <td>Kraken</td>
+        <td>&euro; 398.49</td>
+      </tr>
+    </table>
+    <h3>2015</h3>
+    <table class="table table-bordered">
+      <thead class="thead-light">
+      <tr>
+        <th>Exchange</th>
+        <th>Waarde</th>
+      </tr>
+      </thead>
+      <tr>
+        <td>BTC-e</td>
+        <td>&euro; 262.32</td>
+      </tr>
+      <tr>
+        <td>Kraken</td>
+        <td>&euro; 263.63</td>
+      </tr>
+    </table>
+    <h3>2014</h3>
+    <table class="table table-bordered">
+      <thead class="thead-light">
+      <tr>
+        <th>Exchange</th>
+        <th>Waarde</th>
+      </tr>
+      </thead>
+      <tr>
+        <td>BTC-e</td>
+        <td>&euro; 554.95</td>
+      </tr>
+      <tr>
         <td>Mt.Gox</td>
+        <td>&euro; 576.77</td>
+      </tr>
+    </table>
+    <h3>2013</h3>
+    <table class="table table-bordered">
+      <thead class="thead-light">
+      <tr>
+        <th>Exchange</th>
+        <th>Waarde</th>
+      </tr>
+      </thead>
+      <tr>
+        <td>BTC-e</td>
+        <td>&euro; 10.17</td>
+      </tr>
+      <tr>
+        <td>Mt.Gox</td>
+        <td>&euro; 10.18</td>
+      </tr>
+    </table>
+    <h3>2012</h3>
+    <table class="table table-bordered">
+      <thead class="thead-light">
+      <tr>
+        <th>Exchange</th>
+        <th>Waarde</th>
+      </tr>
+      </thead>
+      <tr>
+        <td>Mt.Gox</td>
+        <td>&euro; 3.88</td>
       </tr>
     </table>
     </div>
 
-    <p class="text-justify">Voor de jaren 2010-2011 is geen exchange data beschikbaar. Voor deze jaren is gebruik gemaakt van USD waarden van <a href="https://www.in2013dollars.com/bitcoin-price">Coindesk<a/>. De USD waarden zijn omgerekend met de USD/EUR wisselkoers van 1 januari <a href="https://www.xe.com/currencytables/?from=USD&date=2010-01-01">2010<a/> en <a href="https://www.xe.com/currencytables/?from=USD&date=2011-01-01">2011<a/>.</p>
+    <p class="text-justify">Van de jaren 2010 en 2011 zijn geen exchange gegevens beschikbaar. Hiervoor is gebruik gemaakt van <a href="https://www.in2013dollars.com/bitcoin-price">Coindesk</a> USD waarden die zijn omgerekend met de USD/EUR wisselkoers van 1 januari 2010 en 2011.</p>
 
     </div>
   </div>
