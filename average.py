@@ -20,13 +20,13 @@ total_count = 0
 total_sum = 0
 
 # Loop trough the input files.
-for file in input_file:
+for file_ in input_file:
   # Set file count and sum to zero.
   file_row = 0
   file_sum = 0
 
   # Loop trough columns 0 (unixtime) and 1 (value) and convert unixtime to human date.
-  for row in csv.reader(open(file)):
+  for row in csv.reader(open(file_)):
     date_ = datetime.utcfromtimestamp(float(row[0])).strftime('%Y-%m-%d')
     value = float(row[1])
 
@@ -44,7 +44,7 @@ for file in input_file:
   # Print the file results.
   print('-'*40)
   print('Date    :', input_date)
-  print('File    :', file)
+  print('File    :', file_)
   print('Average :', file_avg)
 
   # Calulate the total average if the file average is not zero:
