@@ -27,10 +27,13 @@
     <br></br>
   </header>
 
-    <p class="text-justify">Om de peildatum waarde te bepalen is gebruik gemaakt van gegevens van exchanges die Bitcoins tegen Euros verhandelen (BTC/EUR). Met deze exchange gegevens is de gemiddelde waarde op 1 januari berekend. De peildatum waarde is bepaald door het totale gemiddelde te berekenen van de gemiddelde exchange waarden.</p>
-
-    <p class="text-justify">De exchange gegevens zijn afkomstig van <a href="https://api.bitcoincharts.com/v1/csv/">bitcoincharts</a>. Om op basis van deze gegevens de gemiddelde waarden te berekenen is een <a href="https://github.com/tomwijnroks/peildatum/blob/master/average.py">script</a> gebruikt.</p>
-    <p class="text-left">Onderstaande overzichten tonen de gemiddelde waarden per exchange op 1 januari van het jaar.</p>
+    <p class="text-justify">Om de peildatum waarde van 1 januari te bepalen is de close (slotkoers) van 31 december gebruikt. Dit is de laatst genoteerde Bitcoin koers die zo dicht mogelijk bij de peildatum komt.</p>
+    <p class="text-justify">Er is gebruik gemaakt van exchange gegevens die Bitcoins tegen Euros verhandelen (BTC/EUR). Deze gegevens zijn afkomstig van de onderstaande bronnen:</p>
+    <ul>
+      <li><a href="https://bl3p.eu/">BL3P (Bitonic)</a></li>
+      <li><a href="https://bitcoincharts.com">Bitcoincharts</a></li>
+    </ul>
+    <p class="text-justify">Om zo goed (eerlijk) mogelijk de peildatum waarde te bepalen is het gemiddelde berekend over de onderstaande close waarden.</p>
 
     <div class="table-responsive">
     <h3>2019</h3>
@@ -38,20 +41,34 @@
       <thead class="thead-light">
       <tr>
         <th>Exchange</th>
-        <th>Waarde</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Close</th>
       </tr>
       </thead>
       <tr>
         <td>Bitstamp</td>
-        <td>&euro; 3255.12</td>
+        <td>2018-12-31</td>
+        <td>23:59:42</td>
+        <td>&euro; 3233.87</td>
+      </tr>
+      <tr>
+        <td>BL3P (Bitonic)</td>
+        <td>2018-12-31</td>
+        <td>23:59:00</td>
+        <td>&euro; 3222.36</td>
       </tr>
       <tr>
         <td>Coinbase</td>
-        <td>&euro; 3256.52</td>
+        <td>2018-12-31</td>
+        <td>23:59:18</td>
+        <td>&euro; 3240.00</td>
       </tr>
       <tr>
         <td>Kraken</td>
-        <td>&euro; 3257.04</td>
+        <td>2018-12-31</td>
+        <td>23:59:58</td>
+        <td>&euro; 3235.90</td>
       </tr>
     </table>
     <h3>2018</h3>
@@ -59,20 +76,34 @@
       <thead class="thead-light">
       <tr>
         <th>Exchange</th>
-        <th>Waarde</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Close</th>
       </tr>
       </thead>
       <tr>
         <td>Bitstamp</td>
-        <td>&euro; 11156.55</td>
+        <td>2017-12-31</td>
+        <td>23:59:12</td>
+        <td>&euro; 11583.17</td>
+      </tr>
+      <tr>
+        <td>BL3P (Bitonic)</td>
+        <td>2017-12-31</td>
+        <td>23:59:00</td>
+        <td>&euro; 11809.00</td>
       </tr>
       <tr>
         <td>Coinbase</td>
-        <td>&euro; 11749.29</td>
+        <td>2017-12-31</td>
+        <td>23:59:50</td>
+        <td>&euro; 12139.01</td>
       </tr>
       <tr>
         <td>Kraken</td>
-        <td>&euro; 11503.50</td>
+        <td>2017-12-31</td>
+        <td>23:59:59</td>
+        <td>&euro; 11993.60</td>
       </tr>
     </table>
     <h3>2017</h3>
@@ -80,20 +111,28 @@
       <thead class="thead-light">
       <tr>
         <th>Exchange</th>
-        <th>Waarde</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Close</th>
       </tr>
       </thead>
       <tr>
         <td>BTC-e</td>
-        <td>&euro; 910.31</td>
+        <td>2016-12-31</td>
+        <td>23:57:20</td>
+        <td>&euro; 891.54</td>
       </tr>
       <tr>
         <td>Coinbase</td>
-        <td>&euro; 939.66</td>
+        <td>2016-12-31</td>
+        <td>23:58:42</td>
+        <td>&euro; 924.98</td>
       </tr>
       <tr>
         <td>Kraken</td>
-        <td>&euro; 936.07</td>
+        <td>2016-12-31</td>
+        <td>23:58:51</td>
+        <td>&euro; 914.60</td>
       </tr>
     </table>
     <h3>2016</h3>
@@ -101,20 +140,28 @@
       <thead class="thead-light">
       <tr>
         <th>Exchange</th>
-        <th>Waarde</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Close</th>
       </tr>
       </thead>
       <tr>
         <td>BTC-e</td>
-        <td>&euro; 397.30</td>
+        <td>2015-12-31</td>
+        <td>23:50:02</td>
+        <td>&euro; 393.13</td>
       </tr>
       <tr>
         <td>Coinbase</td>
-        <td>&euro; 399.07</td>
+        <td>2015-12-31</td>
+        <td>23:56:32</td>
+        <td>&euro; 396.87</td>
       </tr>
       <tr>
         <td>Kraken</td>
-        <td>&euro; 398.49</td>
+        <td>2015-12-31</td>
+        <td>23:59:04</td>
+        <td>&euro; 395.77</td>
       </tr>
     </table>
     <h3>2015</h3>
@@ -122,16 +169,22 @@
       <thead class="thead-light">
       <tr>
         <th>Exchange</th>
-        <th>Waarde</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Close</th>
       </tr>
       </thead>
       <tr>
         <td>BTC-e</td>
-        <td>&euro; 262.32</td>
+        <td>2014-12-31</td>
+        <td>23:59:58</td>
+        <td>&euro; 267.00</td>
       </tr>
       <tr>
         <td>Kraken</td>
-        <td>&euro; 263.63</td>
+        <td>2014-12-31</td>
+        <td>23:59:58</td>
+        <td>&euro; 266.55</td>
       </tr>
     </table>
     <h3>2014</h3>
@@ -139,16 +192,22 @@
       <thead class="thead-light">
       <tr>
         <th>Exchange</th>
-        <th>Waarde</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Close</th>
       </tr>
       </thead>
       <tr>
         <td>BTC-e</td>
-        <td>&euro; 554.95</td>
+        <td>2013-12-31</td>
+        <td>23:49:42</td>
+        <td>&euro; 550.00</td>
       </tr>
       <tr>
         <td>Mt.Gox</td>
-        <td>&euro; 576.77</td>
+        <td>2013-12-31</td>
+        <td>23:00:51</td>
+        <td>&euro; 579.89</td>
       </tr>
     </table>
     <h3>2013</h3>
@@ -156,16 +215,22 @@
       <thead class="thead-light">
       <tr>
         <th>Exchange</th>
-        <th>Waarde</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Close</th>
       </tr>
       </thead>
       <tr>
         <td>BTC-e</td>
-        <td>&euro; 10.17</td>
+        <td>2012-12-31</td>
+        <td>23:56:00</td>
+        <td>&euro; 10.20</td>
       </tr>
       <tr>
         <td>Mt.Gox</td>
-        <td>&euro; 10.18</td>
+        <td>2012-12-31</td>
+        <td>23:58:00</td>
+        <td>&euro; 10.19</td>
       </tr>
     </table>
     <h3>2012</h3>
@@ -173,12 +238,16 @@
       <thead class="thead-light">
       <tr>
         <th>Exchange</th>
-        <th>Waarde</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Close</th>
       </tr>
       </thead>
       <tr>
         <td>Mt.Gox</td>
-        <td>&euro; 3.88</td>
+        <td>2011-12-31</td>
+        <td>22:45:52</td>
+        <td>&euro; 3.54</td>
       </tr>
     </table>
     </div>
