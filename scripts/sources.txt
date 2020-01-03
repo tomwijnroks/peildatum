@@ -1,0 +1,3 @@
+https://bitcoincharts.com/charts/bitstampEUR
+https://bitcoincharts.com/charts/krakenEUR
+https://api.pro.coinbase.com/products/BTC-EUR/candles?start=2019-12-31T23:59:00&end=2020-01-01T00:00:00&granularity=60
