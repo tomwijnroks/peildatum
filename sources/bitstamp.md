@@ -1,10 +1,9 @@
 # Bitstamp
 Bitstamp OHLC data source: https://www.bitstamp.net/api/
 
-## BTC/EUR
-BTC/EUR openings prices at the start of every year.
+Bitcoin openings prices at the start of every year.
 
-| Unixtime   | ISO 8601 date/time format | Price     |
+| Unixtime   | ISO 8601 date/time format | BTC/EUR   |
 |------------|---------------------------|----------:|
 | 1325372400 | 2012-01-01T00:00:00+01:00 |      3.54 |
 | 1356994800 | 2013-01-01T00:00:00+01:00 |     10.03 |
