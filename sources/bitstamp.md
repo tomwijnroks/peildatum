@@ -1,7 +1,7 @@
 # Bitstamp
 Bitstamp OHLC data source: https://www.bitstamp.net/api/
 
-Bitcoin openings prices at the start of every year.
+#### Bitcoin opening price at the start of every year:
 
 | Unixtime   | ISO 8601 date/time format | BTC/EUR   |
 |------------|---------------------------|----------:|
