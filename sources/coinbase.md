@@ -1,7 +1,7 @@
 # Coinbase
 Coinbase OHLC data source: https://api.pro.coinbase.com/
 
-#### Bitcoin opening price at the start of every year:
+## Bitcoin opening price at the start of every year:
 
 | Unixtime   | ISO 8601 date/time format | BTC/EUR   |
 |------------|---------------------------|----------:|
