@@ -1,5 +1,6 @@
 # Bitstamp
-Bitstamp OHLC data source: https://www.bitstamp.net/api/
+Bitstamp OHLC data sources:
+- https://www.bitstamp.net/api/
 
 ## Opening price
 The Bitcoin opening price at the start of every year (Central European Time / UTC+1).

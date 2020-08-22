@@ -1,5 +1,6 @@
 # Coinbase
-Coinbase OHLC data source: https://api.pro.coinbase.com/
+Coinbase OHLC data sources:
+- https://api.pro.coinbase.com/
 
 ## Opening price
 The Bitcoin opening price at the start of every year (Central European Time / UTC+1).
