@@ -2,9 +2,7 @@
 Bitstamp OHLC data source: https://www.bitstamp.net/api/
 
 ## Opening price
-The Bitcoin opening price at the start of every year:
-
-Timezone: Central European Time (UTC+1)
+The Bitcoin opening price at the start of every year (Central European Time / UTC+1).
 
 | Unixtime   | ISO 8601 date/time format | BTC/USD   | BTC/EUR   |
 |------------|---------------------------|----------:|----------:|

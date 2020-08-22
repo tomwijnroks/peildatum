@@ -2,7 +2,7 @@
 Coinbase OHLC data source: https://api.pro.coinbase.com/
 
 ## Opening price
-The Bitcoin opening price at the start of every year:
+The Bitcoin opening price at the start of every year (Central European Time / UTC+1).
 
 | Unixtime   | ISO 8601 date/time format | BTC/USD   | BTC/EUR   |
 |------------|---------------------------|----------:|----------:|
