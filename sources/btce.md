@@ -2,7 +2,7 @@
 BTC-e data sources:
 - https://api.bitcoincharts.com/v1/csv/
 
-Bitcoincharts does not contain OHCL data and trading data for 00:00:00 timestamps is missing. Therefore, the first availabe timestamp within the first opening hour of the year has been used.
+Bitcoincharts does not contain OHLC data and trading data for 00:00:00 timestamps is missing. Therefore, the first availabe timestamp within the first opening hour of the year has been used.
 
 ## Opening price
 The Bitcoin opening price at the start of every year (Central European Time / UTC+1).
