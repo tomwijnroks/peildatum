@@ -4,9 +4,11 @@
 # It tries to fetch the opening price at the start of every year.
 ################################################################################
 
-YEARS="2016 2020"
+YEARS="2016 2021"
 TIMEZONE="Europe/Amsterdam"
-API_URL="https://api.pro.coinbase.com/products/BTC-EUR/candles?&granularity=3600"
+#PAIR="BTC-USD"
+PAIR="BTC-EUR"
+API_URL="https://api.pro.coinbase.com/products/${PAIR}/candles?&granularity=3600"
 
 # Loop trough the years range.
 for YEAR in `seq ${YEARS}`; do
@@ -21,7 +23,7 @@ for YEAR in `seq ${YEARS}`; do
   ISO_8601=$(date --iso-8601=seconds -d @${UNIX_TIME})
 
   # Coinbase requires iso 8601 format without the timezone.
-  ISO_8601_COINBASE=$(date --iso-8601=seconds -d @${UNIX_TIME} | cut -f1 -d'+')
+  ISO_8601_COINBASE=$(date --utc --iso-8601=seconds -d @${UNIX_TIME} | cut -f1 -d'+')
 
   # Get the OHCL open price from the public exchange api.
   # Each bucket is an array of the following information:
