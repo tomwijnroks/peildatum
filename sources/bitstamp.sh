@@ -4,9 +4,11 @@
 # It tries to fetch the opening price at the start of every year.
 ################################################################################
 
-YEARS="2012 2020"
+YEARS="2012 2021"
 TIMEZONE="Europe/Amsterdam"
-API_URL="https://www.bitstamp.net/api/v2/ohlc/btceur/?step=3600&limit=1&start="
+#PAIR="btcusd"
+PAIR="btceur"
+API_URL="https://www.bitstamp.net/api/v2/ohlc/${PAIR}/?step=3600&limit=1&start="
 
 # Loop trough the years range.
 for YEAR in `seq ${YEARS}`; do

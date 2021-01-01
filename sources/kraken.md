@@ -1,5 +1,6 @@
 # Kraken
 Kraken OHLC data sources:
+- https://www.kraken.com/features/api
 - [Downloadable historical OHLCVT data](https://support.kraken.com/hc/en-us/articles/360047124832-Downloadable-historical-OHLCVT-Open-High-Low-Close-Volume-Trades-data)
 - Source: XBT_OHLCVT.zip (contains: XBTUSD_60.csv, XBTEUR_60.csv)
 
@@ -15,3 +16,4 @@ The Bitcoin opening price at the start of every year (Central European Time / UT
 | 1514761200 | 2018-01-01T00:00:00+01:00 |  13990.00 |  11993.60 |
 | 1546297200 | 2019-01-01T00:00:00+01:00 |   3691.90 |   3235.90 |
 | 1577833200 | 2020-01-01T00:00:00+01:00 |   7168.30 |   6397.40 |
+| 1609455600 | 2021-01-01T00:00:00+01:00 |  29133.80 |  23814.80 |
