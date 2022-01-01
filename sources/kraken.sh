@@ -6,7 +6,7 @@
 # Source: https://support.kraken.com/hc/en-us/articles/360047124832
 ################################################################################
 
-YEARS="2014 2021"
+YEARS="2014 2022"
 TIMEZONE="Europe/Amsterdam"
 CSV_FILE="XBTEUR_60.csv"
 
