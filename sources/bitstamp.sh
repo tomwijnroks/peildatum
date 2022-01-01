@@ -4,9 +4,8 @@
 # It tries to fetch the opening price at the start of every year.
 ################################################################################
 
-YEARS="2012 2021"
+YEARS="2012 2022"
 TIMEZONE="Europe/Amsterdam"
-#PAIR="btcusd"
 PAIR="btceur"
 API_URL="https://www.bitstamp.net/api/v2/ohlc/${PAIR}/?step=3600&limit=1&start="
 
