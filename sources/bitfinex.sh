@@ -6,7 +6,6 @@
 
 YEARS="2012 2021"
 TIMEZONE="Europe/Amsterdam"
-#PAIR="BTCUSD"
 PAIR="BTCEUR"
 API_URL="https://api-pub.bitfinex.com/v2/candles/trade:1h:t${PAIR}/hist"
 

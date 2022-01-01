@@ -13,8 +13,6 @@ CSV_FILE="XBTEUR_60.csv"
 # For recent OHLC data try the public api:
 # # array of array entries(<time>, <open>, <high>, <low>, <close>, <vwap>, <volume>, <count>)
 # BTCEUR = https://api.kraken.com/0/public/OHLC?pair=XXBTZEUR&since=1609455600&interval=60
-# BTCUSD = https://api.kraken.com/0/public/OHLC?pair=XXBTZUSD&since=1609455600&interval=60
-
 
 # Loop trough the years range.
 for YEAR in `seq ${YEARS}`; do

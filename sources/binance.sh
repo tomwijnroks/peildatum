@@ -6,7 +6,6 @@
 
 YEARS="2012 2021"
 TIMEZONE="Europe/Amsterdam"
-#PAIR="BTCUSDT"
 PAIR="BTCEUR"
 API_URL="https://api.binance.com/api/v3/klines?symbol=${PAIR}&interval=1h"
 

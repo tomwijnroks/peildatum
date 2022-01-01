@@ -6,7 +6,6 @@
 
 YEARS="2016 2021"
 TIMEZONE="Europe/Amsterdam"
-#PAIR="BTC-USD"
 PAIR="BTC-EUR"
 API_URL="https://api.pro.coinbase.com/products/${PAIR}/candles?&granularity=3600"
 
