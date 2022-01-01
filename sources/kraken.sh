@@ -6,13 +6,31 @@
 # Source: https://support.kraken.com/hc/en-us/articles/360047124832
 ################################################################################
 
+# For recent OHLC data use the public api. Use a few minutes ahead of the actual
+# time to get the right results.
+#
+# Example: use '1640991000' to get '1640991600' in the results.
+# Array contains: (<time>, <open>, <high>, <low>, <close>, <vwap>, <volume>, <count>)
+#
+# curl --silent "https://api.kraken.com/0/public/OHLC?pair=XXBTZEUR&since=1640991000&interval=60" | jq
+# {
+#   "error": [],
+#   "result": {
+#     "XXBTZEUR": [
+#       [
+#         1640991600,
+#         "40721.5",
+#         "40881.9",
+#         "40631.3",
+#         "40660.3",
+#         "40804.4",
+#         "54.26003307",
+#         824
+#       ],
+
 YEARS="2014 2022"
 TIMEZONE="Europe/Amsterdam"
 CSV_FILE="XBTEUR_60.csv"
-
-# For recent OHLC data try the public api:
-# # array of array entries(<time>, <open>, <high>, <low>, <close>, <vwap>, <volume>, <count>)
-# BTCEUR = https://api.kraken.com/0/public/OHLC?pair=XXBTZEUR&since=1609455600&interval=60
 
 # Loop trough the years range.
 for YEAR in `seq ${YEARS}`; do
