@@ -46,7 +46,7 @@ for YEAR in `seq ${YEARS}`; do
   ISO_8601=$(date --iso-8601=seconds -d @${UNIX_TIME})
 
   # Get the OHCL open price using the unix timestamp.
-  OHLC_OPEN=$(grep "^${UNIX_TIME}" ${CSV_FILE} | awk -F, '{print $5}')
+  OHLC_OPEN=$(grep "^${UNIX_TIME}" ${CSV_FILE} | awk -F, '{print $2}')
 
   # Print the unix timestamp, year and openings price.
   echo "${UNIX_TIME} ${ISO_8601} ${OHLC_OPEN}"
