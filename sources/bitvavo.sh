@@ -4,7 +4,7 @@
 # It uses public OHLC data from exchanges to retrieve the opening price.
 ################################################################################
 
-YEARS="2020 2022"
+YEARS="2020 2023"
 TIMEZONE="Europe/Amsterdam"
 PAIR="BTC-EUR"
 API_URL="https://api.bitvavo.com/v2/BTC-EUR/candles?&interval=1h"

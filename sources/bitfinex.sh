@@ -4,7 +4,7 @@
 # It uses public OHLC data from exchanges to retrieve the opening price.
 ################################################################################
 
-YEARS="2012 2022"
+YEARS="2012 2023"
 TIMEZONE="Europe/Amsterdam"
 PAIR="BTCEUR"
 API_URL="https://api-pub.bitfinex.com/v2/candles/trade:1h:t${PAIR}/hist"
