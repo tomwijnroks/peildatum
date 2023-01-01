@@ -1,11 +1,13 @@
 #!/bin/bash
 ################################################################################
-# This script uses historical OHLC data from Kraken OHLCVT files.
-# It tries to fetch the opening price at the start of every year.
+# This script uses historical OHLC data from Kraken OHLCVT files. OHLCVT data
+# updates are provided at the end of each quarter.
 #
+# The archive file XBT_OHLCVT.zip contains the XBTEUR_60.csv file.
 # Source: https://support.kraken.com/hc/en-us/articles/360047124832
+#
 ################################################################################
-
+#
 # For recent OHLC data use the public api. Use a few minutes ahead of the actual
 # time to get the right results.
 #
@@ -27,8 +29,10 @@
 #         "54.26003307",
 #         824
 #       ],
+#
+################################################################################
 
-YEARS="2014 2022"
+YEARS="2014 2023"
 TIMEZONE="Europe/Amsterdam"
 CSV_FILE="XBTEUR_60.csv"
 

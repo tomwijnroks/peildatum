@@ -4,7 +4,7 @@
 # It tries to fetch the opening price at the start of every year.
 ################################################################################
 
-YEARS="2012 2022"
+YEARS="2012 2023"
 TIMEZONE="Europe/Amsterdam"
 PAIR="btceur"
 API_URL="https://www.bitstamp.net/api/v2/ohlc/${PAIR}/?step=3600&limit=1&start="

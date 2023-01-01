@@ -4,7 +4,7 @@
 # It uses public OHLC data from exchanges to retrieve the opening price.
 ################################################################################
 
-YEARS="2012 2022"
+YEARS="2012 2023"
 TIMEZONE="Europe/Amsterdam"
 PAIR="BTCEUR"
 API_URL="https://api.binance.com/api/v3/klines?symbol=${PAIR}&interval=1h"
