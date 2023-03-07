@@ -1,0 +1,15 @@
+---
+name: Get data from APIs
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - '**'
+
+steps:
+  - uses: actions/checkout@v3
+  - uses: actions/setup-python@v4
+    with:
+      python-version: '3.11'
+  - run: python collect.py
