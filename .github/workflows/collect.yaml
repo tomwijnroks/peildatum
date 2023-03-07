@@ -6,10 +6,13 @@ on:
   push:
     branches:
       - '**'
-
-steps:
-  - uses: actions/checkout@v3
-  - uses: actions/setup-python@v4
-    with:
-      python-version: '3.11'
-  - run: python collect.py
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    name: Collect data from APIs
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: python collect.py
