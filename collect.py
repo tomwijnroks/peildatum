@@ -1,4 +1,5 @@
 from datetime import date
+import yaml
 
 from sources.binance import Binance
 from sources.bitfenix import Bitfenix
@@ -26,7 +27,7 @@ exchanges = {
 # Create a dict to collect ohlc data for all exchanges.
 ohlc = {}
 for name, exchange in exchanges.items():
-  ohlc[name] = {}
+  ohlc[name] = []
 
 # Loop years.
 for year in years:
@@ -34,7 +35,15 @@ for year in years:
   # Loop exchanges and get ohlc data for the provided year.
   for name, exchange in exchanges.items():
     value = exchange.get(year)
-    ohlc[name][year] = value
-    print("On 1 jan " + str(year)+" "+name + " was worth "+ str(value))
+    ohlc[name].append({
+      "year": year,
+      "open": value,
+    })
+    print("On 1 jan " + str(year)+" "+name + " was worth EUR "+ str(value))
 
   print("")
+
+for exchange_name, values in ohlc.items():
+  filename = "ohlc/"+exchange_name + ".yaml"
+  with open(filename, 'w') as outfile:
+    yaml.dump(values, outfile, default_flow_style=False)

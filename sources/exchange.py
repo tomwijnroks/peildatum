@@ -14,7 +14,7 @@ class Exchange(ABC):
 
   def format(self, value):
     formatted_value = '{:_.2f}'.format(float(value)).replace(".", ",").replace("_", ".")
-    return '€' + formatted_value
+    return formatted_value
 
   def timestamp(self, year):
     return int(datetime.fromisoformat(str(year)+"-01-01 00:00:00").timestamp())
