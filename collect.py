@@ -62,7 +62,14 @@ for year in years:
 
   print("")
 
+# Define a custom representer for strings with numbers to make sure the amounts are quoted.
+def quoted_presenter(dumper, data):
+    if any(char.isdigit() for char in data):
+      return dumper.represent_scalar('tag:yaml.org,2002:str', data, style="'")
+    return dumper.represent_scalar('tag:yaml.org,2002:str', data, style="")
+yaml.add_representer(str, quoted_presenter)
+
 for exchange_name, values in ohlc.items():
   filename = "ohlc/"+exchange_name + ".yaml"
-  with open(filename, 'w') as outfile:
+  with open(filename, 'w+') as outfile:
     yaml.dump(values, outfile, default_flow_style=False)
