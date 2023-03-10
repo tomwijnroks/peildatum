@@ -52,6 +52,14 @@ for year in years:
     if value:
       ohlc[name][year]["open"] = value
 
+    exchange_year_value = "On 1 jan {year} {exchange} was worth {value}. ({source})" .format(
+      year = year,
+      exchange = name,
+      value = 'EUR '+str(ohlc[name][year]["open"]) if ohlc[name][year]["open"] != '-' else 'unknown',
+      source = 'data from API' if value else 'existing data'
+    )
+    print(exchange_year_value)
+
   print("")
 
 for exchange_name, values in ohlc.items():
