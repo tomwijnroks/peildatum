@@ -4,7 +4,7 @@ from datetime import datetime
 from sources.exchange import Exchange
 
 class Bitstamp(Exchange):
-  start_year = 2017
+  start_year = 2012
   api_url ="https://www.bitstamp.net/api/v2/ohlc/btceur/"
 
   def params(self, year):
@@ -21,6 +21,9 @@ class Bitstamp(Exchange):
       self.api_url,
       params = self.params(year)
     ).json()
+
+    if not json_response["data"]["ohlc"]:
+      return None
 
     ohlc = {
       'open': json_response["data"]["ohlc"][0]["open"],
