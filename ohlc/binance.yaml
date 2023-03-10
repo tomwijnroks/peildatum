@@ -1,24 +1,24 @@
-- open: 15.402,09
-  year: 2023
-- open: 40.698,13
-  year: 2022
-- open: 23.808,93
-  year: 2021
-- open: '-'
-  year: 2020
-- open: '-'
-  year: 2019
-- open: '-'
-  year: 2018
-- open: '-'
-  year: 2017
-- open: '-'
-  year: 2016
-- open: '-'
-  year: 2015
-- open: '-'
-  year: 2014
-- open: '-'
-  year: 2013
-- open: '-'
-  year: 2012
+2012:
+  open: '-'
+2013:
+  open: '-'
+2014:
+  open: '-'
+2015:
+  open: '-'
+2016:
+  open: '-'
+2017:
+  open: '-'
+2018:
+  open: '-'
+2019:
+  open: '-'
+2020:
+  open: '-'
+2021:
+  open: '23.808,93'
+2022:
+  open: '40.698,13'
+2023:
+  open: '15.402,09'
