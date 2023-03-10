@@ -26,8 +26,17 @@ exchanges = {
 
 # Create a dict to collect ohlc data for all exchanges.
 ohlc = {}
+
+# Loop exchanges and try to load existing data from yaml files.
 for name, exchange in exchanges.items():
-  ohlc[name] = []
+  ohlc[name] = {}
+  try:
+    with open("ohlc/"+name+".yaml", "r") as stream:
+      exchange_data = yaml.safe_load(stream)
+      if exchange_data:
+        ohlc[name] = exchange_data
+  except FileNotFoundError:
+    pass
 
 # Loop years.
 for year in years:
@@ -35,11 +44,13 @@ for year in years:
   # Loop exchanges and get ohlc data for the provided year.
   for name, exchange in exchanges.items():
     value = exchange.get(year)
-    ohlc[name].append({
-      "year": year,
-      "open": value,
-    })
-    print("On 1 jan " + str(year)+" "+name + " was worth EUR "+ str(value))
+
+    if not year in ohlc[name].keys():
+      ohlc[name][year] = {
+        "open": '-',
+      }
+    if value:
+      ohlc[name][year]["open"] = value
 
   print("")
 
