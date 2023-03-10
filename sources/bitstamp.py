@@ -22,5 +22,12 @@ class Bitstamp(Exchange):
       params = self.params(year)
     ).json()
 
-    return json_response["data"]["ohlc"][0]["open"]
+    ohlc = {
+      'open': json_response["data"]["ohlc"][0]["open"],
+      'close': json_response["data"]["ohlc"][0]["close"],
+      'high': json_response["data"]["ohlc"][0]["high"],
+      'low': json_response["data"]["ohlc"][0]["low"],
+    }
+
+    return ohlc["open"]
 

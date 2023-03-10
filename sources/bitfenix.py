@@ -23,5 +23,13 @@ class Bitfenix(Exchange):
       params = self.params(year)
     ).json()
 
-    return json_response[0][1]
+    ohlc = {
+      'open': json_response[0][1],
+      'close': json_response[0][2],
+      'high': json_response[0][3],
+      'low': json_response[0][4],
+    }
+
+    return ohlc["open"]
+
 

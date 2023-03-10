@@ -24,10 +24,12 @@ class Kraken(Exchange):
     return params
 
   def year(self, year):
-    return self._get_open(year)
+    ohlc = self._get_ohlc(year)
+
+    return ohlc["open"]
 
 
-  def _get_open(self, year):
+  def _get_ohlc(self, year):
     trades = self._get_trades(year)
 
     # Put all trades in a dataframe.
@@ -38,7 +40,16 @@ class Kraken(Exchange):
     tradesDF['Time'] = pd.to_datetime(tradesDF['Time'], unit='s')
     tradesDF.set_index('Time',inplace=True)
 
-    return tradesDF.resample('1H')['Price'].agg(['first']).iat[0, 0]
+    ohlcDF = tradesDF.resample('1H')['Price'].agg(["first", "max", "min", "last"])
+
+    ohlc = {
+      'open': ohlcDF.iat[0, 0],
+      'high': ohlcDF.iat[0, 1],
+      'low': ohlcDF.iat[0, 2],
+      'close': ohlcDF.iat[0, 3],
+    }
+
+    return ohlc
 
   def _get_trades(self, year):
     end_date = str(year)+"-01-01 01:00:00"

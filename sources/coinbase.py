@@ -25,7 +25,14 @@ class Coinbase(Exchange):
       params = self.params(year)
     ).json()
 
-    return json_response[0][3]
+    ohlc = {
+      'open': json_response[0][3],
+      'high': json_response[0][2],
+      'low': json_response[0][1],
+      'close': json_response[0][4],
+    }
+
+    return ohlc["open"]
 
   def __custom_time(self, year):
     # Prepare timezones for conversion.
