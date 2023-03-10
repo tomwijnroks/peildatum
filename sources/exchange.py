@@ -6,7 +6,7 @@ class Exchange(ABC):
 
   def get(self, year):
     if year < self.start_year:
-      return '-'
+      return None
 
     value = self.year(year)
 
