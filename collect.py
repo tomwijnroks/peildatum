@@ -2,7 +2,7 @@ from datetime import date
 import yaml
 
 from sources.binance import Binance
-from sources.bitfenix import Bitfenix
+from sources.bitfinex import Bitfinex
 from sources.bitstamp import Bitstamp
 from sources.bitvavo import Bitvavo
 from sources.coinbase import Coinbase
@@ -17,7 +17,7 @@ years = range(end_year, start_year-1, -1)
 # Define available exchanges.
 exchanges = {
   'binance': Binance(),
-  'bitfenix': Bitfenix(),
+  'bitfinex': Bitfinex(),
   'bitstamp': Bitstamp(),
   'bitvavo': Bitvavo(),
   'coinbase': Coinbase(),

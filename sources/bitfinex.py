@@ -3,7 +3,7 @@ from datetime import datetime
 
 from sources.exchange import Exchange
 
-class Bitfenix(Exchange):
+class Bitfinex(Exchange):
   start_year = 2018
   api_url = "https://api-pub.bitfinex.com/v2/candles/trade:1h:tBTCEUR/hist"
 
