@@ -26,7 +26,7 @@ bundle install
 ```
 
 ### Developing locally
-When developing, start the jekyll server that will auto rebuild and reload the page upon changes.
+When developing, start the Jekyll server that will auto rebuild and reload the page upon changes.
 ```
 bundle exec jekyll serve --livereload --source ./docs
 ```
@@ -38,6 +38,3 @@ Building for production will generate the html once and write all files in the `
 ```
 bundle exec jekyll build --source ./docs
 ```
-
-
-
