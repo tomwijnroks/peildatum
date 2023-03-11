@@ -31,7 +31,7 @@ ohlc = {}
 for name, exchange in exchanges.items():
   ohlc[name] = {}
   try:
-    with open("ohlc/"+name+".yaml", "r") as stream:
+    with open("docs/_data/ohlc/"+name+".yaml", "r") as stream:
       exchange_data = yaml.safe_load(stream)
       if exchange_data:
         ohlc[name] = exchange_data
@@ -70,6 +70,6 @@ def quoted_presenter(dumper, data):
 yaml.add_representer(str, quoted_presenter)
 
 for exchange_name, values in ohlc.items():
-  filename = "ohlc/"+exchange_name + ".yaml"
+  filename = "docs/_data/ohlc/"+exchange_name + ".yaml"
   with open(filename, 'w+') as outfile:
     yaml.dump(values, outfile, default_flow_style=False)
