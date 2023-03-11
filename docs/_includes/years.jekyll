@@ -1,0 +1,12 @@
+
+{% comment %}
+Generate a `years` variable by looping over the first exchange data file.
+From then on, the `years` variabl can be used to loop over all years.
+{% endcomment %}
+
+{% assign first_exchange_values = site.data.ohlc | first | last %}
+{% assign years = "" | split: "" %}
+{% for value in first_exchange_values %}
+  {% assign years = years | push: value[0] %}
+{% endfor %}
+{% assign years = years | sort | reverse %}
