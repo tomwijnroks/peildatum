@@ -33,4 +33,3 @@ class Bitstamp(Exchange):
     }
 
     return ohlc["open"]
-

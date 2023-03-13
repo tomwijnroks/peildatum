@@ -69,4 +69,3 @@ class Kraken(Exchange):
 
     # Filter out trades that happened after the end date. Within the trade the transaction date is in the 3rd column.
     return list(filter(lambda trade: float(trade[2]) <= end_timestamp, trades))
-

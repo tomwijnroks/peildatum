@@ -31,5 +31,3 @@ class Bitfinex(Exchange):
     }
 
     return ohlc["open"]
-
-

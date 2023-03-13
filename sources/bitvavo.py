@@ -32,4 +32,3 @@ class Bitvavo(Exchange):
     }
 
     return ohlc["open"]
-

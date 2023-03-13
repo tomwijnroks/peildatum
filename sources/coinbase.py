@@ -47,4 +47,3 @@ class Coinbase(Exchange):
 
     # Coinbase requires ISO 8601 without the timezone/offset (strip all after '+' character).
     return str(localtime.isoformat()).split("+", 1)[0]
-

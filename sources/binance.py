@@ -34,4 +34,3 @@ class Binance(Exchange):
     }
 
     return ohlc["open"]
-
