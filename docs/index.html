@@ -12,7 +12,8 @@ title: Bitcoin prijs op 1 januari
   <thead class="thead-light">
   <tr>
     <th></th>
-    {% for exchange in site.data.ohlc %}
+    {% assign sorted-exchanges = site.data.ohlc | sort %}
+    {% for exchange in sorted-exchanges %}
       {% assign exchange-name = exchange[0] %}
       <th class="text-center">{{ exchange-name | capitalize }}</th>
     {% endfor %}
@@ -21,7 +22,7 @@ title: Bitcoin prijs op 1 januari
   {% for year in years %}
     <tr>
       <td class="text-center font-weight-bold">{{ year }}</td>
-      {% for exchange in site.data.ohlc %}
+      {% for exchange in sorted-exchanges %}
         {% assign exchange-data = exchange[1] %}
         <td class="text-right" style="white-space: nowrap;">
           {% if exchange-data[year]["open"] != "-" %}
