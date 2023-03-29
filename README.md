@@ -25,6 +25,17 @@ gem install bundler
 bundle install
 ```
 
+For Debian-like systems install as root (or use sudo):
+```
+apt install ruby2.7 ruby2.7-dev
+gem install bundler jekyll
+```
+Switch to or login as the user, set the .gem path and run bundle install:
+```
+bundle config set --local path /home/username/.gem
+bundle install
+```
+
 ### Developing locally
 When developing, start the Jekyll server that will auto rebuild and reload the page upon changes.
 ```
