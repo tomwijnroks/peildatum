@@ -40,23 +40,29 @@ for name, exchange in exchanges.items():
 
 # Loop years.
 for year in years:
-  print(year)
+  print("Year " + str(year))
   # Loop exchanges and get ohlc data for the provided year.
   for name, exchange in exchanges.items():
-    value = exchange.get(year)
+    year_ohlc = exchange.get(year)
 
     if not year in ohlc[name].keys():
       ohlc[name][year] = {
         "open": '-',
+        "high": '-',
+        "low": '-',
+        "close": '-',
       }
-    if value:
-      ohlc[name][year]["open"] = value
+    if year_ohlc:
+      ohlc[name][year] = year_ohlc
 
-    exchange_year_value = "On 1 jan {year} {exchange} was worth {value}. ({source})" .format(
+    exchange_year_value = "{exchange} {year} ({source})\nOpen: {open} | High: {high} | Low: {low} | Close: {close}\n" .format(
       year = year,
       exchange = name,
-      value = 'EUR '+str(ohlc[name][year]["open"]) if ohlc[name][year]["open"] != '-' else 'unknown',
-      source = 'data from API' if value else 'existing data'
+      open = 'EUR '+str(ohlc[name][year]["open"]) if ohlc[name][year]["open"] != '-' else 'unknown',
+      high = 'EUR '+str(ohlc[name][year]["high"]) if ohlc[name][year]["high"] != '-' else 'unknown',
+      low = 'EUR '+str(ohlc[name][year]["low"]) if ohlc[name][year]["low"] != '-' else 'unknown',
+      close = 'EUR '+str(ohlc[name][year]["close"]) if ohlc[name][year]["close"] != '-' else 'unknown',
+      source = 'data from API' if year_ohlc else 'existing data'
     )
     print(exchange_year_value)
 

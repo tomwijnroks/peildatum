@@ -24,9 +24,7 @@ class Kraken(Exchange):
     return params
 
   def year(self, year):
-    ohlc = self._get_ohlc(year)
-
-    return ohlc["open"]
+    return self._get_ohlc(year)
 
 
   def _get_ohlc(self, year):
