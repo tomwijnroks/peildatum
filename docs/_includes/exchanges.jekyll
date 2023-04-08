@@ -1,0 +1,6 @@
+
+{% comment %}
+Generate an `exchanges` variable that contains the sorted exchanges.
+{% endcomment %}
+
+{% assign exchanges = site.data.ohlc | sort %}
