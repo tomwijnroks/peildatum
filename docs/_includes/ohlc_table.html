@@ -1,0 +1,30 @@
+{% include years.jekyll %}
+{% include exchanges.jekyll %}
+
+<div class="table-responsive">
+  <table class="table table-bordered table-sm small">
+    <thead class="thead-light">
+    <tr>
+      <th></th>
+      {% for exchange in exchanges %}
+        {% assign exchange-name = exchange[0] %}
+        <th class="text-center">{{ exchange-name | capitalize }}</th>
+      {% endfor %}
+    </tr>
+    </thead>
+    {% for year in years %}
+      <tr>
+        <td class="text-center font-weight-bold">{{ year }}</td>
+        {% for exchange in exchanges %}
+          {% assign exchange-data = exchange[1] %}
+          <td class="text-right" style="white-space: nowrap;">
+            {% if exchange-data[year][page.ohlc_type] != "-" %}
+            &euro;
+            {% endif %}
+            {{ exchange-data[year][page.ohlc_type] }}
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+  </div>

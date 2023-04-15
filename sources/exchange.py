@@ -10,7 +10,15 @@ class Exchange(ABC):
 
     value = self.year(year)
 
-    return self.format(value) if value else None
+    if value:
+      return {
+        'open': self.format(value["open"]),
+        'close': self.format(value["close"]),
+        'high': self.format(value["high"]),
+        'low': self.format(value["low"]),
+      }
+
+    return None
 
   def format(self, value):
     formatted_value = '{:_.2f}'.format(float(value)).replace(".", ",").replace("_", ".")

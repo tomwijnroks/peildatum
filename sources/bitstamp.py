@@ -25,11 +25,9 @@ class Bitstamp(Exchange):
     if not json_response["data"]["ohlc"]:
       return None
 
-    ohlc = {
+    return {
       'open': json_response["data"]["ohlc"][0]["open"],
       'close': json_response["data"]["ohlc"][0]["close"],
       'high': json_response["data"]["ohlc"][0]["high"],
       'low': json_response["data"]["ohlc"][0]["low"],
     }
-
-    return ohlc["open"]

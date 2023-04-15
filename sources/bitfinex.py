@@ -23,11 +23,9 @@ class Bitfinex(Exchange):
       params = self.params(year)
     ).json()
 
-    ohlc = {
+    return {
       'open': json_response[0][1],
       'close': json_response[0][2],
       'high': json_response[0][3],
       'low': json_response[0][4],
     }
-
-    return ohlc["open"]

@@ -24,11 +24,10 @@ class Bitvavo(Exchange):
       params = self.params(year)
     ).json()
 
-    ohlc = {
+    return {
       'open': json_response[0][1],
       'high': json_response[0][2],
       'low': json_response[0][3],
       'close': json_response[0][4],
     }
 
-    return ohlc["open"]
