@@ -20,19 +20,8 @@ To build the page you need ruby. This can be installed with [rbenv](https://gith
 
 Install and prepare a specific ruby version, install the bundler gem to manage dependencies and install the dependencies.
 ```
-rbenv install 2.7.2
+rbenv install 3.2.2
 gem install bundler
-bundle install
-```
-
-For Debian-like systems install as root (or use sudo):
-```
-apt install ruby2.7 ruby2.7-dev
-gem install bundler jekyll
-```
-Switch to or login as the user, set the .gem path and run bundle install:
-```
-bundle config set --local path /home/username/.gem
 bundle install
 ```
 
