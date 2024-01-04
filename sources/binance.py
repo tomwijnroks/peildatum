@@ -17,7 +17,7 @@ class Binance(Exchange):
       "interval": "1h",
       "symbol": "BTCEUR",
       "startTime": str(timestamp)+"000",
-      "endTime": str(endTime)+"999",
+      "endTime": str(endTime)+"999"
     }
 
     return params

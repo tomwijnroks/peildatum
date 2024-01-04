@@ -44,7 +44,7 @@ class Coinbase(Exchange):
     utc = datetime.fromisoformat(str(year)+"-01-01 00:00:00")
 
     if (use_end_date):
-      utc = datetime.fromisoformat(str(year)+"-01-01 23:23:23")
+      utc = datetime.fromisoformat(str(year)+"-01-01 23:59:59")
 
     utc = utc.replace(tzinfo=from_zone)
     # Convert to local date.
