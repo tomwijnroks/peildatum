@@ -9,12 +9,10 @@ class Coinbase(Exchange):
   api_url ="https://api.pro.coinbase.com/products/BTC-EUR/candles"
 
   def params(self, year):
-    coinbase_time = self.__custom_time(year)
-
     params = {
       "granularity": 3600,
-      "start": coinbase_time,
-      "end": coinbase_time
+      "start": self.__custom_time(year),
+      "end": self.__custom_time(year, True)
     }
 
     return params
@@ -25,20 +23,29 @@ class Coinbase(Exchange):
       params = self.params(year)
     ).json()
 
+    # The json response is a dict with groups per hour.
+    # Find the min and max for the whole result set by looping over all hours.
+    high = max([hour[2] for hour in json_response])
+    low = min([hour[1] for hour in json_response])
+
     return {
-      'open': json_response[0][3],
-      'high': json_response[0][2],
-      'low': json_response[0][1],
+      'open': json_response[-1][3],
+      'high': high,
+      'low': low,
       'close': json_response[0][4],
     }
 
-  def __custom_time(self, year):
+  def __custom_time(self, year, use_end_date = False):
     # Prepare timezones for conversion.
     from_zone = tz.gettz(self.timezone)
     to_zone = tz.gettz('UTC')
 
     # Start with utc date.
     utc = datetime.fromisoformat(str(year)+"-01-01 00:00:00")
+
+    if (use_end_date):
+      utc = datetime.fromisoformat(str(year)+"-01-01 23:23:23")
+
     utc = utc.replace(tzinfo=from_zone)
     # Convert to local date.
     localtime = utc.astimezone(to_zone)

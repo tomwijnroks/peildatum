@@ -9,10 +9,12 @@ class Bitfinex(Exchange):
 
   def params(self, year):
     timestamp = self.timestamp(year)
+    # End timestamp is +24 hours, minus 1 second, to stay within the same day at 23:59:59.
+    endTimestamp = timestamp + 86400 - 1
 
     params = {
       "start": str(timestamp)+"000",
-      "end": str(timestamp)+"999"
+      "end": str(endTimestamp)+"999"
     }
 
     return params
@@ -23,9 +25,14 @@ class Bitfinex(Exchange):
       params = self.params(year)
     ).json()
 
+    # The json response is a dict with groups per hour.
+    # Find the min and max for the whole result set by looping over all hours.
+    high = max([hour[3] for hour in json_response])
+    low = min([hour[4] for hour in json_response])
+
     return {
-      'open': json_response[0][1],
+      'open': json_response[-1][1],
       'close': json_response[0][2],
-      'high': json_response[0][3],
-      'low': json_response[0][4],
+      'high': high,
+      'low': low,
     }

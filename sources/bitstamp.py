@@ -10,7 +10,7 @@ class Bitstamp(Exchange):
   def params(self, year):
     params = {
       "step": 3600,
-      "limit": 1,
+      "limit": 24,
       "start": str(self.timestamp(year))
     }
 
@@ -25,9 +25,14 @@ class Bitstamp(Exchange):
     if not json_response["data"]["ohlc"]:
       return None
 
+    # The json response is a dict with groups per hour.
+    # Find the min and max for the whole result set by looping over all hours.
+    high = max([hour["high"] for hour in json_response["data"]["ohlc"]])
+    low = min([hour["low"] for hour in json_response["data"]["ohlc"]])
+
     return {
       'open': json_response["data"]["ohlc"][0]["open"],
-      'close': json_response["data"]["ohlc"][0]["close"],
-      'high': json_response["data"]["ohlc"][0]["high"],
-      'low': json_response["data"]["ohlc"][0]["low"],
+      'close': json_response["data"]["ohlc"][-1]["close"],
+      'high': high,
+      'low': low,
     }
