@@ -9,6 +9,8 @@ Needs python 3, which can be installed via [pyenv](https://github.com/pyenv/pyen
 - Install dependencies `pip install -r requirements.txt`
 - Collect new data `python collect.py`
 
+By default only new data for the last 2 years is being collected. If you want to get data for a specific year, add it as a commandline argument: `python collect.py 2018`. Or use `python collect.py all` to get data for all years, which is pretty slow.
+
 # Generating the html
 To generate the html and assets [Jekyll](https://jekyllrb.com) is used. This can generate the static html based on the OHLC yaml files.
 When the page is hosted on [Github Pages](https://docs.github.com/en/pages), this is done automatically.

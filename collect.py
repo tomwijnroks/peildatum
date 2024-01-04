@@ -1,5 +1,6 @@
 from datetime import date
 import yaml
+import sys
 
 from sources.binance import Binance
 from sources.bitfinex import Bitfinex
@@ -11,8 +12,27 @@ from sources.kraken import Kraken
 end_year = date.today().year
 start_year = 2012
 
-# Create range of years to get ohlc data for (desc).
-years = range(end_year, start_year-1, -1)
+# Create range of possible years to get ohlc data for (desc).
+years = list(range(end_year, start_year-1, -1))
+
+# Create list of years to get new data for.
+# If no argument is provided, the last two years will be used.
+#
+# Use: "all" to get data for all years (which takes multiple minutes).
+# example: python collect.py all
+#
+# Provide a year to get data for that specific year.
+# example: python collect.py 2017
+if (len(sys.argv) > 1 and sys.argv[1] == 'all'):
+  print("Argument provided to get ALL years.")
+elif (len(sys.argv) > 1 and int(sys.argv[1]) in years):
+  print("Argument provided to get specific year.")
+  years = [int(sys.argv[1])]
+else:
+  print("No (valid) argument provided to get a specific year. Using the last two years.")
+  years = [end_year, end_year-1]
+
+print('Getting OHLC data for the following years: '+ str(years)+"\n")
 
 # Define available exchanges.
 exchanges = {
