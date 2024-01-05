@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from datetime import datetime
+from dateutil import tz
 
 class Exchange(ABC):
   timezone = "Europe/Amsterdam"
@@ -25,7 +26,10 @@ class Exchange(ABC):
     return formatted_value
 
   def timestamp(self, year):
-    return int(datetime.fromisoformat(str(year)+"-01-01 00:00:00").timestamp())
+    ts_timezone = tz.gettz(self.timezone)
+    ts_datetime = datetime.fromisoformat(str(year)+"-01-01 00:00:00")
+    ts_replaced = ts_datetime.replace(tzinfo=ts_timezone)
+    return int(ts_replaced.timestamp())
 
   @abstractmethod
   def year(self, year):
