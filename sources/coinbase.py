@@ -6,7 +6,7 @@ from sources.exchange import Exchange
 
 class Coinbase(Exchange):
   start_year = 2016
-  api_url ="https://api.pro.coinbase.com/products/BTC-EUR/candles"
+  api_url ="https://api.exchange.coinbase.com/products/BTC-EUR/candles"
 
   def params(self, year):
     params = {
