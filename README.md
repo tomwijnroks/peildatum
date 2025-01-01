@@ -25,7 +25,7 @@ To build the page you need ruby. This can be installed with [rbenv](https://gith
 
 Install and prepare a specific ruby version, install the bundler gem to manage dependencies and install the dependencies.
 ```
-rbenv install 3.2.2
+rbenv install 3.2.6
 gem install bundler
 bundle install
 ```
